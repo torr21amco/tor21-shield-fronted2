@@ -1,13 +1,165 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+    color: #d4af37;
+    display: flex; /* Añadimos flexbox para centrar verticalmente */
+    flex-direction: column; /* Alineamos los elementos en columna */
+    align-items: center; /* Centramos horizontalmente */
+    justify-content: center; /* Centramos verticalmente */
+    min-height: 100vh; /* Aseguramos que ocupe toda la altura de la ventana */
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #d4af37, #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(212, 175, 55, 1); }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(50, 50, 50, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    color: #d3d3d3;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.card div {
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    color: #b8860b;
+    margin-bottom: 10px;
+}
+
+button {
+    background: linear-gradient(45deg, #d4af37, #b8860b);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+}
+
+select, input {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #d4af37;
+    background: rgba(50, 50, 50, 0.9);
+    color: #d3d3d3;
+    font-size: 1rem;
+    width: 200px;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.error {
+    color: #ff4500;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.connect {
+    color: #d3d3d3;
+}
+
+.superuser {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para la sección de conexión (QR y botón) */
+.connect-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los elementos */
+    gap: 20px; /* Espacio entre el texto, el botón y el QR */
+}
+
+/* Aseguramos que el QR esté centrado */
+.connect-section canvas {
+    display: block; /* Asegura que el canvas (QR) sea un elemento de bloque */
+    margin: 0 auto; /* Centra el QR horizontalmente */
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .card { padding: 15px; }
+    .superuser { grid-template-columns: 1fr; }
+    button, select, input { font-size: 0.9rem; padding: 8px; width: 100%; }
+    p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    .logo { width: 100px; height: 100px; }
+    .card { padding: 10px; }
+    button, select, input { font-size: 0.8rem; padding: 6px; }
 }
