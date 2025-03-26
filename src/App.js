@@ -1002,7 +1002,7 @@ function App() {
           <button onClick={() => connectMetaMask(setAccount, setContract, setError, loadNFTData)}>
             Conectar MetaMask
           </button>
-          <QRCodeCanvas value={`https://metamask.app.link/dapp/${window.location.hostname}`} size={128} />
+          <QRCodeCanvas value="https://metamask.app.link/dapp/tor21shieldnft.netlify.app" size={128} />
         </div>
       )}
     </div>
