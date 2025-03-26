@@ -4,7 +4,7 @@ import { QRCodeCanvas } from 'qrcode.react';
 import './App.css';
 
 // Constantes globales
-const OWNER_ADDRESS = '0x5E2B615a1C9F4942F48984dd2e48bdc85810FEFf';
+//const OWNER_ADDRESS = '0x5E2B615a1C9F4942F48984dd2e48bdc85810FEFf';
 const CONTRACT_ADDRESS = '0xC34aE7425444B82758FF849C7c8144A239dd1c78'; // Nuevo contrato
 const TOR21_ADDRESS = '0x850F11A4DF791B0c6378a66488059E68ceC02335';
 const METADATA_URI = 'https://tor21-metadata-server.onrender.com';
